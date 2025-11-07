@@ -5,6 +5,11 @@ Run with: streamlit run app.py
 Install dependencies:
 pip install streamlit pydub
 """
+import imageio_ffmpeg
+from pydub import AudioSegment
+
+# Use the bundled ffmpeg binary
+AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
 
 import streamlit as st
 import imageio_ffmpeg
@@ -250,4 +255,5 @@ else:
 # Footer
 st.markdown("---")
 st.markdown("Made with ❤️ using Streamlit | Natural Audio Silence Remover")
+
 
