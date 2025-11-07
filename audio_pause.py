@@ -7,6 +7,8 @@ pip install streamlit pydub
 """
 
 import streamlit as st
+import imageio_ffmpeg
+AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
 import tempfile
@@ -248,3 +250,4 @@ else:
 # Footer
 st.markdown("---")
 st.markdown("Made with ❤️ using Streamlit | Natural Audio Silence Remover")
+
